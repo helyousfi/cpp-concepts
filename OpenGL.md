@@ -1,4 +1,4 @@
-# 🎮 OpenGL Setup in Visual Studio (C++)
+# OpenGL Setup in Visual Studio (C++)
 
 This guide shows how to set up an OpenGL project using:
 - [GLFW](https://www.glfw.org/) – for window/input
@@ -8,29 +8,29 @@ This guide shows how to set up an OpenGL project using:
 ---
 
 ## ✅ Prerequisites
-
 - Visual Studio (with C++ tools installed)
 - CMake: [Download CMake](https://cmake.org/download/)
-
 ---
 
 ## 📁 1. Project Structure
-
 Create a folder like this:
 ```
 MyOpenGLProject/
 │
-├── CMakeLists.txt
-├── main.cpp
-├── external/
-│   ├── glfw/
-│   └── glad/
+├── Libraries/
+│   ├── include/
+│   │   ├── glad/
+│   │   ├── GLFW/
+│   │   ├── KHR/
+│   ├── lib/
+│   │   ├── Kglfw3.lib
+├── glad.c
+├── Main.cpp
 ```
 
 ---
 
 ## 📥 2. Download Dependencies
-
 ### GLFW:
 1. Go to [glfw.org](https://www.glfw.org/download.html).
 2. Download the **source** ZIP.
