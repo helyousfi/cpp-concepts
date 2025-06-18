@@ -18,14 +18,14 @@ Create a folder like this:
 MyOpenGLProject/
 │
 ├── Libraries/
-│   ├── include/
-│   │   ├── glad/
-│   │   ├── GLFW/
-│   │   ├── KHR/
-│   ├── lib/
-│   │   ├── Kglfw3.lib
+│   └── include/
+│       ├── glad/
+│       ├── GLFW/
+│       └── KHR/
+│   └── lib/
+│       └── Kglfw3.lib
 ├── glad.c
-├── Main.cpp
+└── Main.cpp
 ```
 
 ---
