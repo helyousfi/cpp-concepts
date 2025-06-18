@@ -17,13 +17,15 @@ This guide shows how to set up an OpenGL project using:
 ## 📁 1. Project Structure
 
 Create a folder like this:
+```
 MyOpenGLProject/
 │
 ├── CMakeLists.txt
 ├── main.cpp
 ├── external/
-│ ├── glfw/
-│ └── glad/
+│   ├── glfw/
+│   └── glad/
+```
 
 ---
 
