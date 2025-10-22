@@ -51,3 +51,23 @@ Simple IR example (pseudo-IR) for int add(int a,int b){return a+b;}:
 t1 = a + b
 return t1
 ```
+
+# Optimizations (middle-end)
+
+**What it does :**
+- Transform IR to make code smaller/faster. Two broad classes:
+  - Local (within a basic block): constant folding, algebraic simplification.
+  - Global: inlining, common subexpression elimination (CSE), dead-code elimination (DCE), loop-invariant code motion, loop unrolling.
+- Register allocation (back-end) — mapping virtual registers to physical registers (graph coloring, linear scan).
+- Many modern compilers convert IR to SSA for easier optimization.
+
+**Examples**
+- Constant folding: `x = 2 + 3 → x = 5.`
+- Inlining: call to small function replaced by body (saves call overhead).
+- Dead code elimination: remove if(false) foo();.
+
+Tip: inspect optimizations by compiling with optimization flags:
+```bash
+gcc -O0 -S file.c      # no optimization -> assembly
+gcc -O2 -S file.c      # optimized assembly
+```
