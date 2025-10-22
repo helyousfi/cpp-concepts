@@ -3,5 +3,5 @@ Source code → preprocessing → lexing/tokenizing → parsing → semantic ana
 
 # Preprocessing
 What it does :
-- Handles #include, #define macros, conditional compilation #if/#ifdef.
+- Handles `#include`, #define macros, conditional compilation #if/#ifdef.
 - Produces a translation unit (single big source text) fed to the lexer.
