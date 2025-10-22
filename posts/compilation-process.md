@@ -91,6 +91,7 @@ gcc -O2 -S file.c      # optimized assembly
 - Relocation: fixup addresses (patch code/data with final addresses).
 - Handles static linking (copy code into executable) or dynamic linking (reference shared libs using PLT/GOT).
 - Produces final executable image with metadata (entry point, program headers).
+
 Two-stage conceptual link operations
 - Resolve symbols: find definitions for all undefined references (from other object files or libraries).
 - Perform relocations: adjust code/data to final addresses.
