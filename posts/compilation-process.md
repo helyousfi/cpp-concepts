@@ -36,3 +36,17 @@ gcc -E main.c -o main.i   # or g++ -E for C++
 - Type mismatch: `int x = "hello"`; → error.
 - Use-before-declaration when not allowed.
 - For C++: choose which overload of `f()` to call; instantiate template `vector<int>`.
+
+# Intermediate representation (IR) generation / translation
+**What it does :**
+- Translates AST into an intermediate form that’s easier for analyses and optimizations.
+- Classic compilers: generate an IR per function (e.g., LLVM IR, GCC GIMPLE/RTL).
+
+**Why IR?**
+- Easier to implement language-independent optimizations.
+- IR often uses a form like three-address code or SSA (Static Single Assignment).
+- Simple IR example (pseudo-IR) for int add(int a,int b){return a+b;}:
+```bash
+t1 = a + b
+return t1
+```
