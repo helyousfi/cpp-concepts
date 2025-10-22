@@ -35,4 +35,4 @@ gcc -E main.c -o main.i   # or g++ -E for C++
 **Examples of semantic checks :**
 - Type mismatch: `int x = "hello"`; → error.
 - Use-before-declaration when not allowed.
-- For C++: choose which overload of f() to call; instantiate template vector<int>.
+- For C++: choose which overload of `f()` to call; instantiate template `vector<int>`.
