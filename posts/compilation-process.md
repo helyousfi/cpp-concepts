@@ -23,5 +23,16 @@ gcc -E main.c -o main.i   # or g++ -E for C++
 - Consumes tokens according to grammar, produces a parse tree / AST.
 - In C++ this is complex (templates, elaborate grammar, ambiguity resolution).
 
-**Example:** 
+**Example :** 
 - parsing `int f(int a){ return a+1; }` → AST node `FunctionDecl(f)` with parameter and `ReturnStmt(BinaryOp(+, a, 1))`.
+
+# Semantic analysis & name resolution
+**What it does :**
+- Builds symbol table, resolves identifiers to declarations, performs type checking, checks scoping rules.
+- In C++: overload resolution, template instantiation, name mangling, conversion rules, access control (private/protected), ADL (argument-dependent lookup).
+- Reports errors/warnings.
+
+**Examples of semantic checks :**
+- Type mismatch: `int x = "hello"`; → error.
+- Use-before-declaration when not allowed.
+- For C++: choose which overload of f() to call; instantiate template vector<int>.
