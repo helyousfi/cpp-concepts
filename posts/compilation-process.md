@@ -71,3 +71,26 @@ Tip: inspect optimizations by compiling with optimization flags:
 gcc -O0 -S file.c      # no optimization -> assembly
 gcc -O2 -S file.c      # optimized assembly
 ```
+
+# Code generation (lowering to assembly / machine code)
+
+**What it does**
+- Convert optimized IR into target-specific assembly: emit instructions, choose calling convention, generate prolog/epilog, handle stack frame.
+- Produce relocatable code with references to symbols that may be resolved at link time.
+
+# Assembler → object file (.o)
+**What it does**
+- Assembler turns assembly into object file format (ELF on Linux, Mach-O on macOS, PE on Windows).
+- Object file sections: .text (code), .data (initialized data), .rodata (read-only data), .bss (zero-initialized).
+- Includes symbol table and relocation entries for unresolved external symbols.
+
+# Linker
+**What it does**
+- Combines object files and libraries into an executable or shared library.
+- Symbol resolution: match symbol references (undefined) to symbol definitions.
+- Relocation: fixup addresses (patch code/data with final addresses).
+- Handles static linking (copy code into executable) or dynamic linking (reference shared libs using PLT/GOT).
+- Produces final executable image with metadata (entry point, program headers).
+Two-stage conceptual link operations
+- Resolve symbols: find definitions for all undefined references (from other object files or libraries).
+- Perform relocations: adjust code/data to final addresses.
