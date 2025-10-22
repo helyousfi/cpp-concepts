@@ -45,7 +45,8 @@ gcc -E main.c -o main.i   # or g++ -E for C++
 **Why IR?**
 - Easier to implement language-independent optimizations.
 - IR often uses a form like three-address code or SSA (Static Single Assignment).
-- Simple IR example (pseudo-IR) for int add(int a,int b){return a+b;}:
+
+Simple IR example (pseudo-IR) for int add(int a,int b){return a+b;}:
 ```bash
 t1 = a + b
 return t1
